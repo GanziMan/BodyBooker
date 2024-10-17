@@ -12,29 +12,24 @@ import {
   DayOfWeek,
 } from "react-day-picker";
 
-export default function ReservationForm() {
-  type Matcher =
-    | boolean
-    | ((date: Date) => boolean)
-    | Date
-    | Date[]
-    | DateRange
-    | DateBefore
-    | DateAfter
-    | DateInterval
-    | DayOfWeek;
+type Matcher =
+  | boolean
+  | ((date: Date) => boolean)
+  | Date
+  | Date[]
+  | DateRange
+  | DateBefore
+  | DateAfter
+  | DateInterval
+  | DayOfWeek;
 
-  const selected: Matcher[] = [
-    new Date(2024, 9, 20), // 특정 날짜
-    // [new Date(2024, 9, 22), new Date(2024, 9, 23)], // 여러 날짜
-    // { from: new Date(2024, 9, 25), to: new Date(2024, 9, 30) } as DateRange, // 날짜 범위
-    // { before: new Date(2024, 9, 18) } as DateBefore, // 특정 날짜 이전
-    // { after: new Date(2024, 9, 15) } as DateAfter, // 특정 날짜 이후
-    // {
-    //   after: new Date(2024, 9, 10),
-    //   before: new Date(2024, 9, 20),
-    // } as DateInterval, // 날짜 간격
-  ];
+const selected: Matcher[] = [
+  new Date(2024, 9, 20), // 특정 날짜
+];
+
+export default function ReservationForm() {
+  const [date, setDate] = useState<Date | undefined>(new Date());
+
   return (
     <>
       <Calendar
@@ -43,6 +38,7 @@ export default function ReservationForm() {
         selected={selected}
         footer={<DialogComponent />}
         onDayClick={(day) => {}}
+        onSelect={setDate}
       />
     </>
   );
