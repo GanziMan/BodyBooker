@@ -25,8 +25,10 @@ export function DialogComponent() {
     register,
     handleSubmit,
     setValue,
-    formState: { errors },
-  } = useForm<ReservationType>();
+    formState: { errors, isValid },
+  } = useForm<ReservationType>({
+    mode: "onChange",
+  });
 
   const [phone, setPhone] = useState<string>("");
   const [isPopOver, setIsPopOver] = useState<boolean>(false);
@@ -72,7 +74,13 @@ export function DialogComponent() {
               id="name"
               defaultValue="김정웅"
               className="col-span-3"
-              {...register("name")}
+              {...register("name", {
+                required: "이름은 필수값입니다.",
+                minLength: {
+                  value: 1,
+                  message: "이름은 최소 1글자 이상이어야 합니다.",
+                },
+              })}
             />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
@@ -84,7 +92,17 @@ export function DialogComponent() {
               value={phone}
               defaultValue="010-0000-0000"
               className="col-span-3"
-              {...register("phone")}
+              {...register("phone", {
+                required: "휴대폰 번호는 필수값입니다.",
+                minLength: {
+                  value: 13,
+                  message: "휴대폰 최소 11자리를 입력해주세요.",
+                },
+                maxLength: {
+                  value: 14,
+                  message: "휴대폰 최대 12자리를 넘을 수 없습니다.",
+                },
+              })}
               onChange={(e) => setPhone(autoHyphen(e.target.value))}
             />
           </div>
@@ -92,6 +110,7 @@ export function DialogComponent() {
         <DialogFooter>
           <Button
             type="submit"
+            disabled={!isValid}
             onClick={handleSubmit((data) => {
               setIsPopOver(false);
             })}
