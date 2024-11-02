@@ -9,6 +9,7 @@ import {
   MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/menubar";
+import VideoPlayer from "@/components/VideoPlayer";
 import Image from "next/image";
 
 import { useRouter } from "next/navigation";
@@ -79,6 +80,7 @@ export default function LayoutClient() {
           );
         })}
       </Menubar>
+      <VideoPlayer videoSrc="/videos/SeraMain.mp4" />
     </>
   );
 }
