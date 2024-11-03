@@ -27,6 +27,11 @@ const MENU_DATA: MenuDataType[] = [
     content: <></>,
   },
   {
+    menu: "프로필",
+    url: "/prfoile",
+    content: <></>,
+  },
+  {
     menu: "소개",
     url: "/introuduce",
     content: (
@@ -45,17 +50,34 @@ const MENU_DATA: MenuDataType[] = [
   {
     menu: "예약",
     url: "/reservation",
+    content: <></>,
+    // content: (
+    //   <MenubarContent>
+    //     <MenubarSeparator />
+    //     <MenubarItem>예약 현황</MenubarItem>
+    //   </MenubarContent>
+    // ),
+  },
+  {
+    menu: "화보 판매",
+    url: "/reservation",
     content: (
       <MenubarContent>
-        <MenubarItem>
-          실시간 예약 <MenubarShortcut>예약</MenubarShortcut>
-        </MenubarItem>
-
         <MenubarSeparator />
         <MenubarItem>예약 현황</MenubarItem>
       </MenubarContent>
     ),
   },
+  // {
+  //   menu: "상담 및 연락 링크",
+  //   url: "/reservation",
+  //   content: (
+  //     <MenubarContent>
+  //       <MenubarSeparator />
+  //       <MenubarItem>예약 현황</MenubarItem>
+  //     </MenubarContent>
+  //   ),
+  // },
 ];
 
 export default function LayoutClient() {
@@ -79,6 +101,16 @@ export default function LayoutClient() {
             </MenubarMenu>
           );
         })}
+        <MenubarMenu>
+          <MenubarTrigger
+            className="h-full"
+            onClick={() =>
+              window.open("https://open.kakao.com/o/scA4o2Xg", "_blank")
+            }
+          >
+            연락 및 상담 링크
+          </MenubarTrigger>
+        </MenubarMenu>
       </Menubar>
     </>
   );
