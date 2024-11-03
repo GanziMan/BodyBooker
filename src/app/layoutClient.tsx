@@ -28,12 +28,12 @@ const MENU_DATA: MenuDataType[] = [
   },
   {
     menu: "프로필",
-    url: "/prfoile",
+    url: "/profile",
     content: <></>,
   },
   {
     menu: "소개",
-    url: "/introuduce",
+    url: "/introduce",
     content: (
       <MenubarContent>
         <MenubarItem>
@@ -68,16 +68,6 @@ const MENU_DATA: MenuDataType[] = [
       </MenubarContent>
     ),
   },
-  // {
-  //   menu: "상담 및 연락 링크",
-  //   url: "/reservation",
-  //   content: (
-  //     <MenubarContent>
-  //       <MenubarSeparator />
-  //       <MenubarItem>예약 현황</MenubarItem>
-  //     </MenubarContent>
-  //   ),
-  // },
 ];
 
 export default function LayoutClient() {
