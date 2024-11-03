@@ -23,7 +23,7 @@ interface MenuDataType {
 const MENU_DATA: MenuDataType[] = [
   {
     menu: "메인",
-    url: "/",
+    url: "/home",
     content: <></>,
   },
   {
@@ -80,7 +80,6 @@ export default function LayoutClient() {
           );
         })}
       </Menubar>
-      <VideoPlayer videoSrc="/videos/SeraMain.mp4" />
     </>
   );
 }
