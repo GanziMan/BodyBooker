@@ -30,15 +30,14 @@ export default function ReservationForm() {
   const [date, setDate] = useState<Date | undefined>(new Date());
 
   return (
-    <>
-      <Calendar
-        title="예약"
-        locale={ko}
-        selected={selected}
-        footer={<DialogComponent />}
-        onDayClick={(day) => {}}
-        onSelect={setDate}
-      />
-    </>
+    <Calendar
+      title="예약"
+      locale={ko}
+      selected={selected}
+      footer={<DialogComponent />}
+      onDayClick={(day) => {}}
+      className="w"
+      onSelect={setDate}
+    />
   );
 }
