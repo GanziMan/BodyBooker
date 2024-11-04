@@ -46,7 +46,7 @@ export default function MenuBar() {
 
       {MENU_DATA.map((item) => {
         return (
-          <MenubarMenu>
+          <MenubarMenu key={item.url}>
             <MenubarTrigger
               className="h-full break-keep"
               onClick={() => router.push(`${item.url}`)}
