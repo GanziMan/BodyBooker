@@ -74,7 +74,7 @@ export default function LayoutClient() {
         return (
           <MenubarMenu>
             <MenubarTrigger
-              className="h-full"
+              className="h-full break-keep"
               onClick={() => router.push(`${item.url}`)}
             >
               {item.menu}
