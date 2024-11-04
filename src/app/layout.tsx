@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import LayoutClient from "./layoutClient";
 import { ToastProvider } from "./Provider/ToastProvider";
 import PageContainer from "@/components/PageContainer";
+import MenuBar from "@/components/MenuBar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,7 +33,7 @@ export default function RootLayout({
       >
         <ToastProvider />
         <PageContainer>
-          <LayoutClient />
+          <MenuBar />
           {children}
         </PageContainer>
       </body>

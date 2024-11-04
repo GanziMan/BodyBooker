@@ -20,7 +20,7 @@ interface ReservationType {
   name: string;
   phone: string;
 }
-export function DialogComponent() {
+export function DialogComponent({ date }: { date: Date }) {
   const {
     register,
     handleSubmit,
@@ -37,7 +37,7 @@ export function DialogComponent() {
   }, [phone]);
 
   return (
-    <Dialog open={isPopOver}>
+    <Dialog open={isPopOver} onOpenChange={setIsPopOver}>
       <DialogTrigger asChild>
         <Button
           variant="outline"
@@ -56,7 +56,7 @@ export function DialogComponent() {
         <DialogHeader>
           <DialogTitle>바디프로필 예약 일정</DialogTitle>
           <DialogDescription>
-            예약 날짜: [예약 날짜를 입력하세요]
+            예약 날짜: <>{date.toLocaleDateString()}</>
             <br />
             준비사항: 촬영 전에 준비해야 할 사항이나 요구사항이 있다면 꼭 확인
             부탁드립니다.

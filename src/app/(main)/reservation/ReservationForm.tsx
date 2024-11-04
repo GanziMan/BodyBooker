@@ -22,10 +22,6 @@ type Matcher =
   | DateInterval
   | DayOfWeek;
 
-const selected: Matcher[] = [
-  new Date(2024, 9, 20), // 특정 날짜
-];
-
 export default function ReservationForm() {
   const [date, setDate] = useState<Date | undefined>(new Date());
 
@@ -33,9 +29,11 @@ export default function ReservationForm() {
     <Calendar
       title="예약"
       locale={ko}
-      selected={selected}
-      footer={<DialogComponent />}
-      onDayClick={(day) => {}}
+      selected={date}
+      footer={<DialogComponent date={date!} />}
+      onDayClick={(day) => {
+        setDate(day);
+      }}
       onSelect={setDate}
     />
   );
