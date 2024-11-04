@@ -36,7 +36,6 @@ export default function ReservationForm() {
       selected={selected}
       footer={<DialogComponent />}
       onDayClick={(day) => {}}
-      className="w"
       onSelect={setDate}
     />
   );
