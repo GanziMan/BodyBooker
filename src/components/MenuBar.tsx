@@ -16,54 +16,28 @@ import { useRouter } from "next/navigation";
 interface MenuDataType {
   menu: string;
   url: string;
-  content: React.ReactNode;
 }
 
 const MENU_DATA: MenuDataType[] = [
   {
     menu: "메인",
     url: "/home",
-    content: <></>,
-  },
-  {
-    menu: "프로필",
-    url: "/profile",
-    content: <></>,
   },
   {
     menu: "소개",
     url: "/introduce",
-    content: (
-      <MenubarContent>
-        <MenubarItem>
-          바디프로필 <MenubarShortcut>영상</MenubarShortcut>
-        </MenubarItem>
-
-        <MenubarSeparator />
-        <MenubarItem>
-          소개 <MenubarShortcut>글</MenubarShortcut>
-        </MenubarItem>
-      </MenubarContent>
-    ),
   },
   {
     menu: "예약",
     url: "/reservation",
-    content: <></>,
   },
   {
-    menu: "화보 판매",
+    menu: "화보",
     url: "/reservation",
-    content: (
-      <MenubarContent>
-        <MenubarSeparator />
-        <MenubarItem>예약 현황</MenubarItem>
-      </MenubarContent>
-    ),
   },
 ];
 
-export default function LayoutClient() {
+export default function MenuBar() {
   const router = useRouter();
 
   return (
@@ -79,7 +53,6 @@ export default function LayoutClient() {
             >
               {item.menu}
             </MenubarTrigger>
-            {item.content}
           </MenubarMenu>
         );
       })}
