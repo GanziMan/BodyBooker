@@ -41,7 +41,7 @@ export default function MenuBar() {
   const router = useRouter();
 
   return (
-    <Menubar className="w-full top-0 h-[50px] sticky flex justify-around">
+    <Menubar className="w-full top-0 h-[50px] sticky flex justify-around border-0  border-b">
       <Image src={"/images/img-logo.jpeg"} alt="" width={48} height={48} />
 
       {MENU_DATA.map((item) => {
