@@ -20,19 +20,19 @@ interface MenuDataType {
 
 const MENU_DATA: MenuDataType[] = [
   {
-    menu: "메인",
+    menu: "Home",
     url: "/home",
   },
   {
-    menu: "소개",
+    menu: "About",
     url: "/introduce",
   },
   {
-    menu: "예약",
+    menu: "Reservation",
     url: "/reservation",
   },
   {
-    menu: "화보",
+    menu: "PhotoBook",
     url: "/reservation",
   },
 ];
