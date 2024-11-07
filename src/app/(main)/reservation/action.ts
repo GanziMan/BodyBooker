@@ -2,14 +2,12 @@
 
 import { z } from "zod";
 import { PrismaClient as MysqlPrismaClient } from "@prisma/client";
-import { CreateReservationRequest, createReservationSchema } from "./schema";
+import {
+  CreateReservationRequest,
+  CreateReservationResponse,
+  createReservationSchema,
+} from "./schema";
 
-export type CreateReservationResponse =
-  | {
-      code: 400;
-      message: string;
-    }
-  | { code: 200; message: string };
 export async function createReservation(
   request: CreateReservationRequest
 ): Promise<CreateReservationResponse> {
@@ -18,7 +16,7 @@ export async function createReservation(
   if (!validated.success) {
     return {
       code: 400,
-      message: "파라미터 오류가 있습니다.",
+      message: validated.error.issues[0].message,
     };
   }
   const prisma = new MysqlPrismaClient();

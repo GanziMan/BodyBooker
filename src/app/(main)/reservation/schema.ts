@@ -6,3 +6,10 @@ export const createReservationSchema = z.object({
 });
 
 export type CreateReservationRequest = z.input<typeof createReservationSchema>;
+
+export type CreateReservationResponse =
+  | {
+      code: 400;
+      message: string;
+    }
+  | { code: 200; message: string };
