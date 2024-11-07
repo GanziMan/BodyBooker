@@ -30,6 +30,7 @@ export default function ReservationForm() {
   const [page, setPage] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
   const [hasMore, setHasMore] = useState<boolean>(true);
+  const [date, setDate] = useState<Date | undefined>(new Date());
 
   const { ref, inView } = useInView();
 
@@ -59,47 +60,43 @@ export default function ReservationForm() {
     .filter((item) => item.selectedDate)
     .map((item) => item.selectedDate);
 
-  const [date, setDate] = useState<Date | undefined>(new Date());
-  console.log(seletedDates);
-  console.log(date);
-  if (seletedDates)
-    return (
-      <section>
-        <Calendar
-          title="예약"
-          locale={ko}
-          selected={date}
-          // disabled={date}
-          footer={<DialogComponent date={date!} />}
-          onDayClick={(day) => {
-            setDate(day);
-          }}
-          onSelect={setDate}
-        />
-        <Table>
-          <TableCaption>예약 명단</TableCaption>
-          <TableHeader>
-            <TableRow>
-              <TableHead className="w-[100px]">id</TableHead>
-              <TableHead>이름</TableHead>
-              <TableHead>번호</TableHead>
-              <TableHead className="text-right">예약날짜</TableHead>
+  return (
+    <section>
+      <Calendar
+        title="예약"
+        locale={ko}
+        selected={date}
+        // disabled={date}
+        footer={<DialogComponent date={date!} />}
+        onDayClick={(day) => {
+          setDate(day);
+        }}
+        onSelect={setDate}
+      />
+      <Table>
+        <TableCaption>예약 명단</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[100px]">id</TableHead>
+            <TableHead>이름</TableHead>
+            <TableHead>번호</TableHead>
+            <TableHead className="text-right">예약날짜</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {reservations.map((reservation) => (
+            <TableRow key={reservation.id}>
+              <TableCell className="font-medium">{reservation.id}</TableCell>
+              <TableCell>{reservation.userName}</TableCell>
+              <TableCell>{reservation.phone}</TableCell>
+              <TableCell className="text-right">
+                {reservation.reservationDate}
+              </TableCell>
             </TableRow>
-          </TableHeader>
-          <TableBody>
-            {reservations.map((reservation) => (
-              <TableRow key={reservation.id}>
-                <TableCell className="font-medium">{reservation.id}</TableCell>
-                <TableCell>{reservation.userName}</TableCell>
-                <TableCell>{reservation.phone}</TableCell>
-                <TableCell className="text-right">
-                  {reservation.reservationDate}
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-        <div ref={ref} style={{ height: "1px" }}></div>
-      </section>
-    );
+          ))}
+        </TableBody>
+      </Table>
+      <div ref={ref} style={{ height: "1px" }}></div>
+    </section>
+  );
 }

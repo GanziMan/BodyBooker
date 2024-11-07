@@ -83,7 +83,7 @@ export function DialogComponent({ date }: { date: Date }) {
               </Label>
               <Input
                 id="name"
-                defaultValue="김정웅"
+                defaultValue=""
                 className="col-span-3"
                 {...register("name", {
                   required: "이름은 필수값입니다.",
