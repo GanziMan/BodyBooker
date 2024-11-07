@@ -10,6 +10,7 @@ import {
   PageReservationResponse,
   pageReservationSchema,
 } from "./schema";
+import { revalidatePath } from "next/cache";
 
 const prisma = new MysqlPrismaClient();
 
@@ -32,6 +33,8 @@ export async function createReservation(
       date: new Date(),
     },
   });
+
+  revalidatePath("/reservation");
 
   return {
     code: 200,
