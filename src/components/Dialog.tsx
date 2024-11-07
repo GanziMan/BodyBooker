@@ -62,7 +62,7 @@ export function DialogComponent({ date }: { date: Date }) {
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent>
         <form onSubmit={handleSubmit(onSubmit)}>
           <DialogHeader>
             <DialogTitle>바디프로필 예약 일정</DialogTitle>
