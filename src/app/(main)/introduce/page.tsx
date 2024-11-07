@@ -1,19 +1,5 @@
+import IntroduceForm from "./IntroduceForm";
+
 export default function Page() {
-  return (
-    <section className="p-5">
-      <p>
-        당신의 특별한 순간을 담다
-        <br />- 바디 프로필 예약 사이트 최고의 바디 프로필 촬영을 위해 설계된
-        예약 사이트입니다.
-        <br />
-        운동의 결실, 도전의 결과, 또는 삶의 중요한 순간을 멋지게 기록하고
-        싶으신가요? <br />
-        전문가들이 당신만을 위해 준비한 다양한 스튜디오와 촬영 옵션을
-        만나보세요. <br />
-        간편한 예약 프로세스를 통해 소중한 순간을 더욱 특별하게 만들어 드립니다.{" "}
-        <br />
-        지금 바로 예약하고, 나만의 완벽한 순간을 사진으로 남겨 보세요!
-      </p>
-    </section>
-  );
+  return <IntroduceForm />;
 }
