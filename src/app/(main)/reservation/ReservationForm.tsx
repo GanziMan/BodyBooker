@@ -20,12 +20,12 @@ interface ReservationDataType {
   userName: string;
   phone: string;
   reservationDate: string;
+  selectedDate: Date;
 
   // 필요한 필드 추가
 }
 
 export default function ReservationForm() {
-  const [date, setDate] = useState<Date | undefined>(new Date());
   const [reservations, setReservations] = useState<ReservationDataType[]>([]);
   const [page, setPage] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
@@ -55,42 +55,51 @@ export default function ReservationForm() {
     }
   };
 
-  return (
-    <section>
-      <Calendar
-        title="예약"
-        locale={ko}
-        selected={date}
-        footer={<DialogComponent date={date!} />}
-        onDayClick={(day) => {
-          setDate(day);
-        }}
-        onSelect={setDate}
-      />
-      <Table>
-        <TableCaption>예약 명단</TableCaption>
-        <TableHeader>
-          <TableRow>
-            <TableHead className="w-[100px]">id</TableHead>
-            <TableHead>이름</TableHead>
-            <TableHead>번호</TableHead>
-            <TableHead className="text-right">예약날짜</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {reservations.map((reservation) => (
-            <TableRow key={reservation.id}>
-              <TableCell className="font-medium">{reservation.id}</TableCell>
-              <TableCell>{reservation.userName}</TableCell>
-              <TableCell>{reservation.phone}</TableCell>
-              <TableCell className="text-right">
-                {reservation.reservationDate}
-              </TableCell>
+  const seletedDates = reservations
+    .filter((item) => item.selectedDate)
+    .map((item) => item.selectedDate);
+
+  const [date, setDate] = useState<Date | undefined>(new Date());
+  console.log(seletedDates);
+  console.log(date);
+  if (seletedDates)
+    return (
+      <section>
+        <Calendar
+          title="예약"
+          locale={ko}
+          selected={date}
+          // disabled={date}
+          footer={<DialogComponent date={date!} />}
+          onDayClick={(day) => {
+            setDate(day);
+          }}
+          onSelect={setDate}
+        />
+        <Table>
+          <TableCaption>예약 명단</TableCaption>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="w-[100px]">id</TableHead>
+              <TableHead>이름</TableHead>
+              <TableHead>번호</TableHead>
+              <TableHead className="text-right">예약날짜</TableHead>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-      <div ref={ref} style={{ height: "1px" }}></div>
-    </section>
-  );
+          </TableHeader>
+          <TableBody>
+            {reservations.map((reservation) => (
+              <TableRow key={reservation.id}>
+                <TableCell className="font-medium">{reservation.id}</TableCell>
+                <TableCell>{reservation.userName}</TableCell>
+                <TableCell>{reservation.phone}</TableCell>
+                <TableCell className="text-right">
+                  {reservation.reservationDate}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+        <div ref={ref} style={{ height: "1px" }}></div>
+      </section>
+    );
 }

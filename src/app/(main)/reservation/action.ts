@@ -77,6 +77,7 @@ export async function pageReservation(
         userName: item.userName,
         phone: item.phone,
         reservationDate: dayjs(item.date).format("YYYY년MM월DD일").toString(),
+        selectedDate: item.date,
       };
     });
 

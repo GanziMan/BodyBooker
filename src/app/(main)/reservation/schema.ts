@@ -22,6 +22,7 @@ export type ReservationDto = {
   userName: string;
   phone: string;
   reservationDate: string;
+  selectedDate: Date;
 };
 export type PageReservationRequest = z.input<typeof pageReservationSchema>;
 
