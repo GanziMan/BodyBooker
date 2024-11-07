@@ -1,5 +1,11 @@
 import VideoPlayer from "@/components/VideoPlayer";
+import HomeCarouselForm from "./HomeCarouselForm";
 
 export default function Page() {
-  return <VideoPlayer videoSrc="/videos/SeraMain.mp4" />;
+  return (
+    <section>
+      <VideoPlayer videoSrc="/videos/SeraMain.mp4" />
+      <HomeCarouselForm />
+    </section>
+  );
 }
