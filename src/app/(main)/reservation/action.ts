@@ -29,7 +29,7 @@ export async function createReservation(
   await prisma.reservation.create({
     data: {
       userName: validated.data.name,
-      phone: validated.data.phone,
+      phone: validated.data.phone.replaceAll("-", ""),
       date: new Date(),
     },
   });
