@@ -45,7 +45,7 @@ export function DialogComponent({ date }: { date: Date }) {
       name: data.name,
       phone: data.phone,
     }).then(() => {
-      toast.success("예약되었습니다.");
+      toast("예약되었습니다.");
       setIsPopOver(false);
     });
   };
