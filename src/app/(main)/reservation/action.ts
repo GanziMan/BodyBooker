@@ -1,4 +1,4 @@
-"use client";
+"use server";
 
 import { z } from "zod";
 import { PrismaClient as MysqlPrismaClient } from "@prisma/client";
@@ -23,9 +23,10 @@ export async function createReservation(
   }
   const prisma = new MysqlPrismaClient();
 
-  const createResponse = await prisma.reservation.create({
+  await prisma.reservation.create({
     data: {
-      userName: "",
+      userName: validated.data.name,
+      phone: validated.data.phone,
       date: new Date(),
     },
   });
