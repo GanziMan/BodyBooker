@@ -33,7 +33,7 @@ const MENU_DATA: MenuDataType[] = [
   },
   {
     menu: "PhotoBook",
-    url: "/reservation",
+    url: "/profile",
   },
 ];
 
