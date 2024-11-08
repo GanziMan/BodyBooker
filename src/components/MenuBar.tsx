@@ -1,17 +1,10 @@
 "use client";
 
-import {
-  Menubar,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarSeparator,
-  MenubarShortcut,
-  MenubarTrigger,
-} from "@/components/ui/menubar";
+import { Menubar, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
 import Image from "next/image";
 
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 interface MenuDataType {
   menu: string;
@@ -49,7 +42,11 @@ export default function MenuBar() {
           <MenubarMenu key={item.url}>
             <MenubarTrigger
               className="h-full break-keep"
-              onClick={() => router.push(`${item.url}`)}
+              onClick={() =>
+                item.url === "/profile"
+                  ? toast("준비중인 서비스입니다")
+                  : router.push(`${item.url}`)
+              }
             >
               {item.menu}
             </MenubarTrigger>
