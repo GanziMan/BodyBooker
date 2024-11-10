@@ -1,6 +1,5 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -13,8 +12,8 @@ import Image from "next/image";
 
 export default function HomeCarouselForm() {
   return (
-    <div className="w-full grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen gap-16 font-[family-name:var(--font-geist-sans)]">
-      <Carousel className="w-full">
+    <div className="w-full min-w-[532px] items-center justify-items-center min-h-screen gap-16 font-[family-name:var(--font-geist-sans)]">
+      <Carousel className="w-full" plugins={[Autoplay({ delay: 2000 })]}>
         <CarouselContent>
           {Array.from({ length: 16 }).map((_, index) => (
             <CarouselItem key={index}>
