@@ -27,7 +27,7 @@ export default function IntroduceForm() {
       <div className="mt-8 flex justify-center">
         <Button
           onClick={() => router.push("/reservation")}
-          className=" text-white px-6 py-3 rounded-full font-semibold  transition duration-300"
+          className="text-white px-6 py-3 rounded-full font-semibold  transition duration-300"
         >
           예약하기
         </Button>
