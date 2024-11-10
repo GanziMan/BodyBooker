@@ -55,10 +55,6 @@ export default function ReservationForm() {
     }
   };
 
-  const seletedDates = reservations
-    .filter((item) => item.selectedDate)
-    .map((item) => item.selectedDate);
-
   return (
     <section>
       <Calendar
