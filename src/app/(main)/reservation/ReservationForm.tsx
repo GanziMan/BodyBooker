@@ -72,7 +72,7 @@ export default function ReservationForm() {
         <TableCaption>예약 명단</TableCaption>
         <TableHeader>
           <TableRow>
-            <TableHead className="w-[100px]">id</TableHead>
+            <TableHead className="w-[100px]">아이디</TableHead>
             <TableHead>이름</TableHead>
             <TableHead>번호</TableHead>
             <TableHead className="text-right">예약날짜</TableHead>
