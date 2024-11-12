@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 export default function IntroduceForm() {
   const router = useRouter();
   return (
-    <section className="max-w-3xl mx-auto p-8 mt-12 bg-white shadow-lg rounded-lg">
+    <section className="mx-auto mt-12 bg-white rounded-lg">
       <h1 className="text-3xl font-bold text-center text-gray-800 mb-4">
         당신의 특별한 순간을 담다
       </h1>
