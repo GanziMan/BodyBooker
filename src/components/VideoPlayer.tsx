@@ -15,7 +15,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoSrc }) => {
         style={{
           width: "100vw",
           // height: "100vh",
-          objectFit: "cover",
+          // objectFit: "cover",
         }}
       />
     </div>
