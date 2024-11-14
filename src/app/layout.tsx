@@ -4,7 +4,6 @@ import "./globals.css";
 import { ToastProvider } from "./Provider/ToastProvider";
 import PageContainer from "@/components/PageContainer";
 import MenuBar from "@/components/MenuBar";
-import Footer from "@/components/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -36,7 +35,6 @@ export default function RootLayout({
         <PageContainer>
           <MenuBar />
           {children}
-          <Footer />
         </PageContainer>
       </body>
     </html>

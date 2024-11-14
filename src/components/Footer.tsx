@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 export default function Footer() {
   const router = useRouter();
   return (
-    <section className="w-full bg-[#262222E6] h-[281px] flex justify-center">
+    <section className="w-full bg-[#262222E6] h-[281px] flex justify-center ">
       <div className="text-white flex justify-between max-w-[1280px] w-full px-20 py-10">
         <div className="flex justify-between w-full">
           <ul className="flex flex-col gap-2">
