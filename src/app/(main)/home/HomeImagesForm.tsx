@@ -19,10 +19,13 @@ export default function HomeImagesForm() {
           src={`/images/profiles/profile-${index + 1}.jpg`}
           width={200}
           height={200}
-          objectFit="contain"
+          style={{ objectFit: "cover" }}
           priority
           alt=""
           key={index}
+          onClick={() =>
+            window.open("https://open.kakao.com/o/scA4o2Xg", "_blank")
+          }
         />
       ))}
     </section>
