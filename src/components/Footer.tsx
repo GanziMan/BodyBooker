@@ -29,6 +29,12 @@ export default function Footer() {
               width={30}
               height={30}
               alt="인스타그램 ic"
+              onClick={() =>
+                window.open(
+                  "https://www.instagram.com/sera_bodyprofile/profilecard/?igsh=MXB5bTVuMnVlcmR2ag==",
+                  "_blank"
+                )
+              }
             />
           </div>
         </div>
