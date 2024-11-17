@@ -57,7 +57,7 @@ export default function MenuBar() {
         <MenubarTrigger
           className="h-full"
           onClick={() =>
-            window.open("https://open.kakao.com/o/scA4o2Xg", "_blank")
+            window.open("https://open.kakao.com/o/sKZAVw0g", "_blank")
           }
         >
           연락 및 상담 링크
