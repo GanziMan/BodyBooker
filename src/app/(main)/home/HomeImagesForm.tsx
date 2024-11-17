@@ -24,7 +24,10 @@ export default function HomeImagesForm() {
           alt=""
           key={index}
           onClick={() =>
-            window.open("https://open.kakao.com/o/scA4o2Xg", "_blank")
+            window.open(
+              "https://www.instagram.com/sera_bodyprofile/?igsh=MXB5bTVuMnVlcmR2ag%3D%3D",
+              "_blank"
+            )
           }
         />
       ))}
