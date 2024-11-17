@@ -9,7 +9,7 @@ export default function LinkForm() {
         className="flex gap-2 items-center"
         onClick={() =>
           window.open(
-            "https://www.instagram.com/sera_bodyprofile/profilecard/?igsh=MXB5bTVuMnVlcmR2ag==",
+            "https://www.instagram.com/sera_bodyprofile/?igsh=MXB5bTVuMnVlcmR2ag%3D%3D",
             "_blank"
           )
         }
@@ -24,7 +24,7 @@ export default function LinkForm() {
       </div>
       <div
         onClick={() =>
-          window.open("https://open.kakao.com/o/scA4o2Xg", "_blank")
+          window.open("https://open.kakao.com/o/sKZAVw0g", "_blank")
         }
       >
         KaKao Talk Chanel (Click)
