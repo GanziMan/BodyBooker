@@ -17,7 +17,7 @@ export default function Footer() {
             <li onClick={() => toast("준비중인 서비스입니다.")}>PhotoBook</li>
             <li
               onClick={() =>
-                window.open("https://open.kakao.com/o/scA4o2Xg", "_blank")
+                window.open("https://open.kakao.com/o/sKZAVw0g", "_blank")
               }
             >
               연락 및 상담 링크
@@ -31,7 +31,7 @@ export default function Footer() {
               alt="인스타그램 ic"
               onClick={() =>
                 window.open(
-                  "https://www.instagram.com/sera_bodyprofile/profilecard/?igsh=MXB5bTVuMnVlcmR2ag==",
+                  "https://www.instagram.com/sera_bodyprofile/?igsh=MXB5bTVuMnVlcmR2ag%3D%3D",
                   "_blank"
                 )
               }
