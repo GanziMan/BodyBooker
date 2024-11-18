@@ -44,7 +44,7 @@ export default function MenuBar() {
               className="h-full break-keep"
               onClick={() =>
                 item.url === "/profile"
-                  ? toast("준비중인 서비스입니다")
+                  ? window.open("https://sexysera.gumroad.com", "_blank")
                   : router.push(`${item.url}`)
               }
             >
