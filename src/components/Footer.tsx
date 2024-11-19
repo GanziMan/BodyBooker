@@ -8,7 +8,7 @@ export default function Footer() {
   const router = useRouter();
   return (
     <section className="w-full bg-[#262222E6] h-[281px] flex justify-center ">
-      <div className="text-white flex justify-between max-w-[1280px] w-full px-20 py-10">
+      <div className="text-white flex flex-col gap-5 max-w-[1280px] w-full px-20 py-10">
         <div className="text-[#9e9e9e] text-xs w-full break-keep">
           <p>(주)설아 | 대표 박성기 | 사업자등록번호 453-81-01842</p>
           <p>충남 천안시 동남구 문암1길 68 </p>
