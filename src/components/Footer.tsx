@@ -9,6 +9,10 @@ export default function Footer() {
   return (
     <section className="w-full bg-[#262222E6] h-[281px] flex justify-center ">
       <div className="text-white flex justify-between max-w-[1280px] w-full px-20 py-10">
+        <div className="text-[#9e9e9e] text-xs w-full break-keep">
+          <p>(주)설아 | 대표 박성기 | 사업자등록번호 453-81-01842</p>
+          <p>충남 천안시 동남구 문암1길 68 </p>
+        </div>
         <div className="flex justify-between w-full">
           <ul className="flex flex-col gap-2">
             <li onClick={() => router.push("/home")}>Home</li>
@@ -23,22 +27,7 @@ export default function Footer() {
               연락 및 상담 링크
             </li>
           </ul>
-          <div>
-            <Image
-              src={"/images/icon/instagram-icon.svg"}
-              width={30}
-              height={30}
-              alt="인스타그램 ic"
-              onClick={() =>
-                window.open(
-                  "https://www.instagram.com/sera_bodyprofile/?igsh=MXB5bTVuMnVlcmR2ag%3D%3D",
-                  "_blank"
-                )
-              }
-            />
-          </div>
         </div>
-        <div></div>
       </div>
     </section>
   );
