@@ -14,7 +14,7 @@ export default function Footer() {
           <p>충남 천안시 동남구 문암1길 68 </p>
         </div>
         <div className="flex justify-between w-full">
-          <ul className="flex flex-col gap-2">
+          <ul className="flex flex-col gap-2 text-sm">
             <li onClick={() => router.push("/home")}>Home</li>
             <li onClick={() => router.push("/introduce")}>About</li>
             <li onClick={() => router.push("/reservation")}>Reservation</li>
